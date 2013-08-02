@@ -30,3 +30,16 @@ Somebody should make a cloud-agnostic version of CloudFormation that supports
 everything. I'm not sure CloudFormation is the best way to do that. It should be
 declarative, easily parseable, maintain the environment over time.
 
+
+Then to the bugs I have met.
+
+#.  A stacks can end up in a non-updateable state where it can only be deleted.
+    And even these only-deletable can end up being non-deletable_, likely
+    because of some bug.
+
+#.  Updating a stack can end up in (what seems to be) an `infinite update loop`_.
+
+.. _non-deletable: https://forums.aws.amazon.com/thread.jspa?threadID=129918
+.. _infinite update loop: https://forums.aws.amazon.com/thread.jspa?threadID=131499
+
+Me like features. Me hate them buggy.
