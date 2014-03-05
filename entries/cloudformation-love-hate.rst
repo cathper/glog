@@ -12,6 +12,12 @@ Here are some of the limitations that makes me hate CloudFormation:
 #.  You cannot attach multiple EIPs to an ENI because you cannot assign multiple
     private IPs to an ENI.
 
+#.  You cannot create an RDS instance where the DNS resolves to a public
+    address. `PubliclyAccessible` is not supported (as it is in the API), you
+    can only attach the EIP to the RDS instance's ENI which you cannot get
+    in CloudFormation (methods for attaching EIPs to instances only works for
+    EC2 instances).
+
 And when you meet those limitations you cannot do anything else but create
 another CloudFormation stack that does the rest; and launching the entire
 environment is a process where you create a stack, do something manually (or in
